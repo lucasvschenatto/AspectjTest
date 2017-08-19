@@ -2,6 +2,7 @@ package main;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -23,6 +24,13 @@ public class TestClass{
 			}
 		});
 		assertNotNull(logs.get(0));
+	}
+	
+	@Test
+	public void dependencyIsOk() {
+		FileDiagram fd = new FileDiagram(Diagram.getInstance(), new File(""));
+		assertNotNull(fd);
+		System.out.println("object "+fd.toString()+"  is ok!");
 	}
 	
 	class Subject{
