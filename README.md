@@ -1,1 +1,2 @@
 # AspectjTest
+Tests with aspectj
