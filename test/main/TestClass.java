@@ -6,8 +6,6 @@ import java.io.File;
 import java.util.List;
 import java.util.function.Consumer;
 
-import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
-
 import org.junit.*;
 
 import otherPackage.ClassWithDependencies;

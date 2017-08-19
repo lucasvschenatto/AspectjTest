@@ -1,6 +1,7 @@
 package main;
 
 import java.util.List;
+import main.Logger;
 
 public class LoggerAdapter{
 	public static void start() {
