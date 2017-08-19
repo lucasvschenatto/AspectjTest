@@ -18,7 +18,8 @@ public aspect Logger{
 		&&!call(* java*..*(..))
 		&&!execution(* java*..*(..))
 		&&!within(java*..*)
-		&& !within(Logger+);
+		&& !within(Logger+)
+		&& !within(LoggerAdapter+);
 	
 	pointcut methodExecution():
 		execution(* *.*(..))&&immune();

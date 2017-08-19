@@ -6,7 +6,11 @@ import java.io.File;
 import java.util.List;
 import java.util.function.Consumer;
 
+import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
+
 import org.junit.*;
+
+import otherPackage.ClassWithDependencies;
 public class TestClass{
 
 	@Test
@@ -33,6 +37,12 @@ public class TestClass{
 		System.out.println("object "+fd.toString()+"  is ok!");
 	}
 	
+	@Test
+	public void classWithDependenciesIsOk() {
+		ClassWithDependencies cwd = new ClassWithDependencies();
+		assertNotNull(cwd);
+		System.out.println("object "+cwd.toString()+"  is ok!");
+	}
 	class Subject{
 		void act() {
 			
