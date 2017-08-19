@@ -14,12 +14,12 @@ public class TestClass{
 	@Test
 	public void test() {
 		Subject s = new Subject();
-		Logger.start();
+		Controller.start();
 		
 		s.act();
 		
-		Logger.stop();
-		List<String> logs = Logger.getLogs();
+		Controller.stop();
+		List<String> logs = Controller.getLogs();
 		logs.forEach(new Consumer<String>() {
 			public void accept(String log) {
 				System.out.println(log);

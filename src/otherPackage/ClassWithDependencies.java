@@ -1,10 +1,10 @@
 package otherPackage;
 
-import main.LoggerAdapter;
+import main.Controller;
 
 public class ClassWithDependencies {
 	public ClassWithDependencies() {
-		LoggerAdapter.start();
-		LoggerAdapter.stop();
+		Controller.start();
+		Controller.stop();
 	}
 }

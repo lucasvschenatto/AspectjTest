@@ -7,10 +7,8 @@ import org.aspectj.lang.Signature;
 
 
 public aspect Logger{
-	private static List<String> logs;
-	private static boolean running;
 	
-	pointcut immune():if(running)
+	pointcut immune():if(Context.RUNNING)
 		&&!call(java*..new(..))
 		&&!execution(java*..new(..))
 		&&!initialization(java*..new(..))
@@ -19,7 +17,7 @@ public aspect Logger{
 		&&!execution(* java*..*(..))
 		&&!within(java*..*)
 		&& !within(Logger+)
-		&& !within(LoggerAdapter+);
+		&& !within(Controller+);
 	
 	pointcut methodExecution():
 		execution(* *.*(..))&&immune();
@@ -28,17 +26,6 @@ public aspect Logger{
 		Signature s = thisJoinPointStaticPart.getSignature();
 		String className = s.getDeclaringType().getCanonicalName();
 		String methodName = s.getName();
-		logs.add("Class:\t"+className+"\nMethod:\t"+methodName);
-	}
-	
-	public static void start(){
-		running = true;
-		logs = new ArrayList<String>();
-	}
-	public static void stop(){
-		running = false;
-	}
-	public static List<String> getLogs() {
-		return logs;
+		Context.LOGS.add("Class:\t"+className+"\nMethod:\t"+methodName);
 	}
 }
