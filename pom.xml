@@ -85,21 +85,16 @@
 			<artifactId>uml</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
-		<!-- <dependency> <groupId>org.eclipse.uml2</groupId> <artifactId>org.eclipse.uml2.uml</artifactId> 
-			<version>3.1.0.v201006071150</version> </dependency> <dependency> <groupId>org.eclipse.uml2</groupId> 
-			<artifactId>org.eclipse.uml2.common</artifactId> <version>1.5.0.v201005031530</version> 
-			</dependency> -->
 	</dependencies>
 	<build>
+		<finalName>${project.artifactId}</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>/resources</directory>
 			</resource>
 		</resources>
-		<finalName>${project.artifactId}</finalName>
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>test</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
