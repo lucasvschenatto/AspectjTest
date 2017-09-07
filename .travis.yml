@@ -2,4 +2,5 @@ language: java
 jdk:
   - oraclejdk8
 after_success:
-  - ./echoFile.sh
+  - ./scripts/hello_world.sh
+  - ./scripts/echo_file.sh
