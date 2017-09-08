@@ -5,4 +5,4 @@ after_success:
   - chmod +x ./scripts/hello_world.sh
   - chmod +x ./scripts/echo_file.sh
   - ./scripts/hello_world.sh
-  - ./scripts/echo_file.sh
+  - ./scripts/echo_file.sh ./docs/dummyFile.txt
